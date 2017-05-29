@@ -17,8 +17,13 @@ export class EquipmentService{
     constructor(public _http: Http, public _location:Location){ }
 
     saveEquipment(equipment){
+        this.equipment = equipment;
         const body = JSON.stringify(equipment);
         console.log(body);
+        const headers = new Headers({'Content-type':'application/json'});
+        return this._http.post('http://localhost:3000/dashboard/save-equipment', body, {headers:headers})
+            .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
     }
     /*
     createWorkout(equipment:Equipment){

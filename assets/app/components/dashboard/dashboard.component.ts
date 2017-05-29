@@ -17,6 +17,7 @@ export class DashboardComponent{
     //For drag and drop
     private event: MouseEvent;
     isMouseDown = false;
+    //Selected holds the element selected, arrPos holds the position in the array.
     selected;
     arrPos;
 
@@ -28,7 +29,12 @@ export class DashboardComponent{
     }
     saveEquipment(){
         console.log(this.equipment);
-        this._equipmentService.saveEquipment(this.equipment);
+        this._equipmentService.saveEquipment(this.equipment)
+            .subscribe(
+              data=>{
+                  console.log(data);
+              },
+                error=> console.error(error));;
     }
     onMouseButton(event: MouseEvent, i): void {
         this.isMouseDown = !this.isMouseDown;
