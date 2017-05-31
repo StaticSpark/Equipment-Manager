@@ -28,7 +28,6 @@ export class StoreComponent{
     }
     createStore(){
         let store = new Store(this.storeForm.value.storeName,this.storeForm.value.storeCode);
-        console.log(store);
         this._storeService.saveStore(store)
             .subscribe(
                 data=>console.log(data),

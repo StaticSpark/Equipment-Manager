@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent }   from './components/home/home.component';
 import { DashboardComponent }   from './components/dashboard/dashboard.component';
 import { StoreComponent }   from './components/store-admin/store-admin.component';
+import { StoreListComponent }   from './components/store-admin/store-list/store-list.component';
 
 import { EquipmentService } from './components/dashboard/equipment.service';
 import { StoreService }   from './components/store-admin/store-admin.service';
@@ -30,9 +31,13 @@ import { AppRoutingModule }     from './app-routing.module';
         AppComponent,
         HomeComponent,
         DashboardComponent,
-        StoreComponent
+        StoreComponent,
+        StoreListComponent
     ],
-    providers: [EquipmentService,StoreService],
+    providers: [
+        EquipmentService,
+        StoreService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

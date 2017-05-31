@@ -13,6 +13,7 @@ import { Store } from './store.model';
 export class StoreService{
 
     store: Store;
+    stores: Store[] = [];
 
     constructor(public _http: Http, public _location:Location){ }
 
@@ -22,6 +23,22 @@ export class StoreService{
         const headers = new Headers({'Content-type':'application/json'});
         return this._http.post('http://localhost:3000/store-admin/save-store', body, {headers:headers})
             .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+    getStores(){
+        const headers = new Headers({'Content-type':'application/json'});
+        return this._http.get('http://localhost:3000/store-admin/get-stores', {headers:headers})
+            .map((response: Response) => {
+                const stores = response.json().obj;     
+                let transformStores: Store[] = [];  
+                for(let store of stores){             
+                        let temp = new Store(store.storeName, store.storeCode);
+                        temp.equipment = store.equipment;
+                        transformStores.push(temp);
+                }
+                this.stores = transformStores;      
+                return transformStores;
+            })  
             .catch((error: Response) => Observable.throw(error.json()));
     }
 }
