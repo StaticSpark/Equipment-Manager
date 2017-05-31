@@ -34,7 +34,7 @@ export class DashboardComponent{
               data=>{
                   console.log(data);
               },
-                error=> console.error(error));;
+                error=> console.error(error));
     }
     onMouseButton(event: MouseEvent, i): void {
         this.isMouseDown = !this.isMouseDown;

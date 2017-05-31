@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="storeForm" (ngSubmit)="createStore(storeForm)">
+            <div class="form-group">
+                <label for="">Store Name</label>
+                <input type="text" class="form-control" formControlName="storeName">
+                <br />       
+                <label for="">Store Code</label>
+                <input type="text" class="form-control" formControlName="storeCode">
+                <br />                
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!storeForm.valid">Save!</button>                                                             
+        </form>
+    </div>
+</div>

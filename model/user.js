@@ -1,14 +1,16 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var equipmentSchema = new Schema({
+var userSchema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
   store: [{type: Schema.Types.ObjectId, ref: 'Store'}],
   created_at: Date,
-  updated_at: Date,
-  equipment: [{}],
+  updated_at: Date
 });
 
-equipmentSchema.pre('save', function(next) {
+userSchema.pre('save', function(next) {
   // get the current date
   var currentDate = new Date();
   
@@ -22,6 +24,6 @@ equipmentSchema.pre('save', function(next) {
   next();
 });
 
-var Equipment = mongoose.model('Equipment', equipmentSchema);
+var User = mongoose.model('User', userSchema);
 
-module.exports = Equipment;
+module.exports = User;

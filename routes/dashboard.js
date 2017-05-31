@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 var Equipment = require('../model/equipment');
-
+/*
 router.post('/save-equipment', function(req, res, next) {
       console.log(req);
       var equipment = new Equipment({
-            name: "Clonmel",
+            storeName: "Clonmel",
+            storeID: '038',
             equipment: req.body
       });
 
@@ -23,5 +24,5 @@ router.post('/save-equipment', function(req, res, next) {
         });
     });
 });
-
+*/
 module.exports = router;

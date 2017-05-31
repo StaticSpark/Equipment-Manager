@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+
+//Custom routes
 var appRoutes = require('./routes/app');
 var dashRoutes = require('./routes/dashboard');
+var storeRoutes = require('./routes/store-admin');
 
 var app = express();
 
@@ -31,6 +34,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/store-admin',storeRoutes);
 app.use('/dashboard', dashRoutes);
 app.use('/', appRoutes);
 
