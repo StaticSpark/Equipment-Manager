@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 import { Store } from '../store.model';
@@ -14,7 +15,7 @@ export class StoreListComponent{
     
     stores: Store[] = [];
 
-    constructor(private _storeService: StoreService){ }
+    constructor(private _storeService: StoreService, private _router: Router){ }
 
     ngOnInit(){
         this._storeService.getStores()
@@ -23,5 +24,10 @@ export class StoreListComponent{
                         console.log(this.stores);      
                     }
                 );
+    }
+    goToStore(i){
+        const body = JSON.stringify(this.stores[i]);
+        localStorage.setItem('store', body);
+        this._router.navigate(['/store-detail']);
     }
 }
