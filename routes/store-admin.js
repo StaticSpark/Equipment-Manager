@@ -60,6 +60,7 @@ router.patch('/update-equipment/:id', function(req,res,next){
             });
         }
         console.log("The length of equipment is: " + req.body.equipment.length);
+        store.equipment = [];
         for(let i = 0; i < req.body.equipment.length; i++){
             store.equipment.push(req.body.equipment[i]);
             console.log("pushed");
