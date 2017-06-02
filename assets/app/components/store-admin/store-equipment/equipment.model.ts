@@ -1,11 +1,11 @@
 export class Equipment {
 
-    public name: String;
+    public name: string;
     public xPos: Number;
     public yPos: Number;
-    public equipmentClass: String;
-    public comment: String;
-    public _id: String;
+    public equipmentClass: string;
+    public comment: string;
+    public _id: string;
     
     constructor(name, eqClass){
         this.name = name;

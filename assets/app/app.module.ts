@@ -13,6 +13,7 @@ import { StoreListComponent }   from './components/store-admin/store-list/store-
 import { StoreDetailComponent }   from './components/store-admin/store-detail/store-detail.component';
 import { StoreEquipmentComponent }   from './components/store-admin/store-equipment/store-equipment.component';
 
+
 //import { EquipmentService } from './components/store-admin/store-equipment/equipment.service';
 import { StoreService }   from './components/store-admin/store-admin.service';
 
@@ -35,7 +36,8 @@ import { AppRoutingModule }     from './app-routing.module';
         StoreComponent,
         StoreListComponent,
         StoreDetailComponent,
-        StoreEquipmentComponent
+        StoreEquipmentComponent,
+        
     ],
     providers: [
         StoreService
