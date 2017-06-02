@@ -6,6 +6,8 @@ export class Equipment {
     public equipmentClass: string;
     public comment: string;
     public _id: string;
+    public width: Number;
+    public length: Number;
     
     constructor(name, eqClass){
         this.name = name;

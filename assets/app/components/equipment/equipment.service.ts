@@ -20,7 +20,7 @@ export class EquipmentService{
         this.equipment = equipment;//update the service array
         const body = JSON.stringify(equipment);
         const headers = new Headers({'Content-type':'application/json'});
-        return this._http.post('http://localhost:3000/dashboard/save-equipment', body, {headers:headers})
+        return this._http.post('http://localhost:3000/equipment/save-equipment', body, {headers:headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
     }

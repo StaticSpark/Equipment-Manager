@@ -2,10 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var equipmentSchema = new Schema({
-  store: [{type: Schema.Types.ObjectId, ref: 'Store'}],
+  name: String,
   created_at: Date,
   updated_at: Date,
-  equipment: [{}],
+  equipmentClass: String,
+  width: Number,
+  length: Number
 });
 
 equipmentSchema.pre('save', function(next) {

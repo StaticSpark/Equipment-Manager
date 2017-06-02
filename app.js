@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
 var dashRoutes = require('./routes/dashboard');
 var storeRoutes = require('./routes/store-admin');
+var equipmentRoutes = require('./routes/equipment');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/equipment', equipmentRoutes)
 app.use('/store-admin',storeRoutes);
 app.use('/dashboard', dashRoutes);
 app.use('/', appRoutes);

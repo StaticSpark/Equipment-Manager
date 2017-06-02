@@ -12,10 +12,12 @@ import { StoreComponent }   from './components/store-admin/store-admin.component
 import { StoreListComponent }   from './components/store-admin/store-list/store-list.component';
 import { StoreDetailComponent }   from './components/store-admin/store-detail/store-detail.component';
 import { StoreEquipmentComponent }   from './components/store-admin/store-equipment/store-equipment.component';
+import { EquipmentComponent }   from './components/equipment/equipment.component';
 
 
 //import { EquipmentService } from './components/store-admin/store-equipment/equipment.service';
 import { StoreService }   from './components/store-admin/store-admin.service';
+import { EquipmentService }   from './components/equipment/equipment.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -37,10 +39,11 @@ import { AppRoutingModule }     from './app-routing.module';
         StoreListComponent,
         StoreDetailComponent,
         StoreEquipmentComponent,
-        
+        EquipmentComponent
     ],
     providers: [
-        StoreService
+        StoreService,
+        EquipmentService
     ],
     bootstrap: [AppComponent]
 })

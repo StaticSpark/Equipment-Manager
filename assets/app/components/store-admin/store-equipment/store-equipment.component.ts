@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer, OnInit, ViewChild  } from '@angular/core';
 
-import { Equipment } from  './equipment.model';
+import { Equipment } from  '../../equipment/equipment.model';
 import { Store } from '../store.model';
 import { StoreService } from '../store-admin.service';
 
