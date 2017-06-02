@@ -1,0 +1,15 @@
+<div class="container" (mousemove)="onMouseMove($event)">
+    <div class="row">
+        <h1> Store Equipment </h1>
+    </div>
+    <div class="row">
+        <div *ngFor="let eq of equipment; let i = index;">
+            <div  (mousedown)="onMouseButton($event, i);" class="{{eq.equipmentClass}}" [style.left]="'{{eq.xPos}} px'">
+                <h4>{{eq.name}}</h4>
+                <h4>{{eq.xPos}}</h4>
+            </div>
+        </div>
+    </div>
+    <button (click)="addEquipment()" type="submit" class="btn btn-default">Add a piece of equipment </button>
+    <button (click)="saveEquipment()" type="submit" class="btn btn-default">Save equipment </button>
+</div>

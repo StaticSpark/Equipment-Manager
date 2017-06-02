@@ -34,11 +34,19 @@ export class StoreService{
                 for(let store of stores){             
                         let temp = new Store(store.storeName, store.storeCode);
                         temp.equipment = store.equipment;
+                        temp._id = store._id;
                         transformStores.push(temp);
                 }
                 this.stores = transformStores;      
                 return transformStores;
             })  
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+    updateEquipment(store:Store){
+        const body = JSON.stringify(store); //to send in the header
+        const headers = new Headers({'Content-type':'application/json'});
+        return this._http.patch('http://localhost:3000/store-admin/update-equipment/' + store._id, body, {headers:headers})
+            .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
     }
 }

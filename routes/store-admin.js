@@ -45,4 +45,39 @@ router.get('/get-stores', function(req, res, next) {
     })
 });
 
+router.patch('/update-equipment/:id', function(req,res,next){
+    Store.findById(req.params.id, function(err, store){
+        if(err){
+            return res.status(500).json({
+                title: 'Something went wrong',
+                error: err 
+            });
+        }
+        if(!store){
+            return res.status(500).json({
+                title: 'No such store found!',
+                error: {message: 'Store not found!'}
+            });
+        }
+        console.log("The length of equipment is: " + req.body.equipment.length);
+        for(let i = 0; i < req.body.equipment.length; i++){
+            store.equipment.push(req.body.equipment[i]);
+            console.log("pushed");
+        }
+        //store.equipment = req.body.equipment;
+        store.save(function(err, result){
+                if(err){
+                    return res.status(500).json({
+                    title: 'An error occurred, couldnt save',
+                    error: err
+                    });
+                }              
+                res.status(200).json({
+                    message: 'Equipment updated!',
+                    obj: result
+                });
+            });
+    });
+});
+
 module.exports = router;

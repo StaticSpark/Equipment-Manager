@@ -5,7 +5,7 @@ var storeSchema = new Schema({
   storeName: { type: String, required: true },
   storeCode: { type: Number, required: true },
   storeManager: [{type: Schema.Types.ObjectId, ref: 'User'}],
-  equipment: [{type: Schema.Types.ObjectId, ref: 'Equipment'}],
+  equipment: [],
   created_at: Date,
   updated_at: Date
 });
