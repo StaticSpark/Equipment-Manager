@@ -1,17 +1,49 @@
-<div class="container" (mousemove)="onMouseMove($event)">
+<div class="container-fluid">
     <div class="row">
-        <h1> Store Equipment </h1>
-    </div>
-    <div class="row map-container" (click)="loadMap($event)">
-        <h1> Load Map </h1>
-
-    </div>
-    <div class="row">
-        <select (change)="dropDownChanged($event.target.value)" >
-            <option>Select</option>
-            <option *ngFor='let eq of equipmentDropdown'>{{ eq.name }}</option>
-        </select>
-        <button (click)="addEquipment()" type="submit" class="btn btn-default">Add a piece of equipment </button>
-        <button (click)="saveEquipment()" type="submit" class="btn btn-default">Save equipment </button>
+        <div class="col-xs-3">
+            <h3> Add Equipment </h3>
+            Type:
+            <select (change)="dropDownChanged($event.target.value)" >
+                <option>Select</option>
+                <option *ngFor='let eq of equipmentDropdown'>{{ eq.name }}</option>
+            </select><br /><br />
+            <button (click)="addEquipment()" type="submit" class="btn btn-default">Add a piece of equipment </button><br /><br />
+            <button (click)="saveEquipment()" type="submit" class="btn btn-default">Save equipment </button>
+        </div>
+        <div class="col-xs-3">
+            <h3> Equipment Details </h3>
+            <ul *ngIf="clickedEquipment != null">
+                <li>{{clickedEquipment.name}}</li>
+                <li>{{clickedEquipment.width}}</li>
+                <li>{{clickedEquipment.length}}</li>
+                <li>{{clickedEquipment.color}}</li>
+            </ul>
+        </div>
     </div>
 </div>
+<div class="container" (mousemove)="onMouseMove($event)">
+
+    <div class="row map-container" (click)="loadMap($event)">
+        <h1 *ngIf="!mapLoaded"> Load Map </h1>
+    </div>
+
+</div><!--
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-xs-3">
+            <h1> Store Equipment </h1>
+        </div>
+        <div class="col-xs-6 map-container" (mousemove)="onMouseMove($event)" (click)="loadMap($event)">
+            <h1 id="load-button" *ngIf="!mapLoaded"> Load Map </h1>
+        </div>
+        <div class="col-xs-3">
+            Type:
+            <select (change)="dropDownChanged($event.target.value)" >
+                <option>Select</option>
+                <option *ngFor='let eq of equipmentDropdown'>{{ eq.name }}</option>
+            </select><br /><br />
+            <button (click)="addEquipment()" type="submit" class="btn btn-default">Add a piece of equipment </button><br /><br />
+            <button (click)="saveEquipment()" type="submit" class="btn btn-default">Save Changes </button>
+        </div>
+    </div>
+</div>-->

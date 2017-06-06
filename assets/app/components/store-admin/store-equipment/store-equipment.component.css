@@ -1,7 +1,13 @@
 h1{
     color:blue;
 }
-
+#load-button{
+    background-color:#000;
+    text-align:center;
+}
+#load-button:hover{
+    cursor: pointer;
+}
 .fourXfive{
     background-color:#000;
     color:#fff;
@@ -13,4 +19,10 @@ h1{
 }
 .container{
     height:1000px;
+}
+.map-container{
+    min-height: 1000px;
+}
+.equipment-element{
+    cursor: pointer;
 }

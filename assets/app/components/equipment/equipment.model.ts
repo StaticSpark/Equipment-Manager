@@ -13,4 +13,13 @@ export class Equipment {
     constructor(name){
         this.name = name;
     }
+
+    /**
+     * setAttributes
+     */
+    public setAttributes(w,l,c) {
+        this.color = c;
+        this.length = l;
+        this.width = w;
+    }
 }
