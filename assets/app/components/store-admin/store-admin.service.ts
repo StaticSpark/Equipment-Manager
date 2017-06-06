@@ -42,6 +42,7 @@ export class StoreService{
             })  
             .catch((error: Response) => Observable.throw(error.json()));
     }
+    //update the specifics stores equipment map
     updateEquipment(store:Store){
         const body = JSON.stringify(store); //to send in the header
         const headers = new Headers({'Content-type':'application/json'});

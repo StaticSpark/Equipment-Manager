@@ -23,15 +23,16 @@ export class EquipmentComponent{
     initForm(){   
         this.equipmentForm = this._fb.group({
             name: [''],
-            equipmentClass: [''],
             width: [''],
-            length: ['']
+            length: [''],
+            color: ['']
         });   
     }
     createEquipment(){
-        let equipment = new Equipment(this.equipmentForm.value.name,this.equipmentForm.value.equipmentClass);
+        let equipment = new Equipment(this.equipmentForm.value.name);
         equipment.width = this.equipmentForm.value.width;
         equipment.length = this.equipmentForm.value.length;
+        equipment.color = this.equipmentForm.value.color;
 
         this._equipmentService.saveEquipment(equipment)
             .subscribe(

@@ -4,11 +4,14 @@
     </div>
     <div class="row map-container" (click)="loadMap($event)">
         <h1> Load Map </h1>
-        <!--<div  *ngFor="let eq of equipment; let i = index;" (mousedown)="onMouseButton($event, i);" class="{{eq.equipmentClass}}" changePosition [xPos]=500>
-            <h4>{{eq.name}}</h4>
-            <h4>{{eq.xPos}}</h4>
-        </div>-->
+
     </div>
-    <button (click)="addEquipment()" type="submit" class="btn btn-default">Add a piece of equipment </button>
-    <button (click)="saveEquipment()" type="submit" class="btn btn-default">Save equipment </button>
+    <div class="row">
+        <select (change)="dropDownChanged($event.target.value)" >
+            <option>Select</option>
+            <option *ngFor='let eq of equipmentDropdown'>{{ eq.name }}</option>
+        </select>
+        <button (click)="addEquipment()" type="submit" class="btn btn-default">Add a piece of equipment </button>
+        <button (click)="saveEquipment()" type="submit" class="btn btn-default">Save equipment </button>
+    </div>
 </div>

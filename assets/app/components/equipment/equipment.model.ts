@@ -8,9 +8,9 @@ export class Equipment {
     public _id: string;
     public width: Number;
     public length: Number;
-    
-    constructor(name, eqClass){
+    public color: Number;
+
+    constructor(name){
         this.name = name;
-        this.equipmentClass = eqClass;
     }
 }
