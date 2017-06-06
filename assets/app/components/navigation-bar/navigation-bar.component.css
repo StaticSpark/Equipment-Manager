@@ -1,0 +1,29 @@
+a.active{
+    font-weight:bold;
+}
+.navbar-default .navbar-nav>li>a {
+    margin-top:4px;
+    font-size:20px;
+    color: #FFF;
+    margin-bottom:4px;
+}
+.navbar-default{
+    background-color:#2C2E2E;
+}
+.navbar-static-top{
+    border-bottom:4px solid #00ACE8;
+}
+.btn-primary {
+    float:right;
+    margin-top:10px;
+    font-size:16px;
+    margin-right:20px;
+    color: #fff;
+    background-color: #00ACE8;
+    border-color: none;
+}
+@media screen and (max-width: 767px) {
+    li{
+        display:block;
+    }
+}

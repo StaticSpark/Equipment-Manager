@@ -8,7 +8,7 @@ export class Equipment {
     public _id: string;
     public width: Number;
     public length: Number;
-    public color: Number;
+    public color: string;
 
     constructor(name){
         this.name = name;

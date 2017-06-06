@@ -5,7 +5,7 @@ var equipmentSchema = new Schema({
   name: String,
   created_at: Date,
   updated_at: Date,
-  color: Number,
+  color: String,
   width: Number,
   length: Number
 });

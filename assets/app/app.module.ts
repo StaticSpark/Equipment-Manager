@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { HomeComponent }   from './components/home/home.component';
+import { NavigationComponent }   from './components/navigation-bar/navigation-bar.component';
 
 import { StoreComponent }   from './components/store-admin/store-admin.component';
 import { StoreListComponent }   from './components/store-admin/store-list/store-list.component';
@@ -39,7 +40,8 @@ import { AppRoutingModule }     from './app-routing.module';
         StoreListComponent,
         StoreDetailComponent,
         StoreEquipmentComponent,
-        EquipmentComponent
+        EquipmentComponent,
+        NavigationComponent
     ],
     providers: [
         StoreService,
